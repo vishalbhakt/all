@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Signup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #fafafa;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            background: #fff;
+            padding: 20px;
+            border: 1px solid #dbdbdb;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .logo {
+            margin-bottom: 20px;
+        }
+
+        .logo img {
+            max-width: 60%;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #dbdbdb;
+            border-radius: 4px;
+            background-color: #fafafa;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #0095f6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #007bb5;
+        }
+
+        .divider {
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: #dbdbdb;
+        }
+
+        .divider span {
+            padding: 0 10px;
+            font-size: 12px;
+            color: #8e8e8e;
+        }
+
+        .login {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .login a {
+            color: #0095f6;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .login a:hover {
+            text-decoration: underline;
+        }
+
+        .otp-container {
+            margin-top: 20px;
+        }
+
+        .otp-container input {
+            text-align: center;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="https://www.instagram.com/static/images/web/logged_out_wordmark.png/7a252de00b20.png" alt="Instagram">
+        </div>
+        <form id="signup-form">
+            <div class="form-group">
+                <input type="text" placeholder="Full Name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="Username" required>
+            </div>
+            <div class="form-group">
+                <input type="password" placeholder="Password" required>
+            </div>
+            <button type="button" class="btn" onclick="showOtpInput()">Sign Up</button>
+        </form>
+        <div id="otp-section" class="otp-container" style="display: none;">
+            <form>
+                <div class="form-group">
+                    <input type="number" placeholder="Enter OTP" required>
+                </div>
+                <button type="submit" class="btn">Verify OTP</button>
+            </form>
+        </div>
+        <div class="divider">
+            <span>OR</span>
+        </div>
+        <div class="login">
+            Have an account? <a href="#">Log in</a>
+        </div>
+    </div>
+
+    <script>
+        function showOtpInput() {
+            document.getElementById('signup-form').style.display = 'none';
+            document.getElementById('otp-section').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
